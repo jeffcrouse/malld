@@ -85,7 +85,6 @@ app.get('/incoming', function(req, res){
 });
 
 app.get("/recording", function(req, res){
-
 	// if (!twilio.validateExpressRequest(req,  twilio_conf.auth_token)) {
 	// 	res.send('you are not twilio.  Buzz off.');
 	// 	return;
@@ -119,8 +118,7 @@ app.get("/recording", function(req, res){
 		console.log('binary data received');
 	});
 
-	f.on('end', function () {
-
+	f.on('finish', function () {
 		var twiml = new twilio.TwimlResponse();
 		twiml.say('Thank you very much for your contribution! You may now hang up.', {
 			voice:'woman',
