@@ -10,6 +10,11 @@ var request = require('request');
 var fs = require('fs');
 var glob = require("glob")
 
+var recordings_dir = util.format('%s/recordings', __dirname);
+fs.exists(recordings_dir, function(exists) {
+	if (!exists) fs.mkdir(recordings_dir);
+});
+
 
 var twilio_conf = {
 	'sid': 'ACcc854bb5309b0308c6f6af4aa3ececf3',
