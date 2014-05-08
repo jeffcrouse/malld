@@ -43,7 +43,7 @@ app.get('/', function(req, res){
 });
 
 
-app.get('/announcement', function(req, res){
+app.get('/announcement.mp3', function(req, res){
 	var local = util.format('%s/recordings/*.mp3', __dirname);
 	glob(local, function (err, files) {
 		if(err) res.send(err);
