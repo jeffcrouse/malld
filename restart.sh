@@ -1,2 +1,1 @@
-./stop.sh;
-./start.sh;
+pm2 restart malld
